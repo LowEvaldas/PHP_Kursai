@@ -1,1 +1,5 @@
-Testt
+<?php
+
+echo "Labas pasauli";
+
+    ?>
