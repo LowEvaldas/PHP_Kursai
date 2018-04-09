@@ -1,0 +1,5 @@
+thead {background-color: bisque}
+td {background-color: white;}
+tbody button {background-color: darkolivegreen; width: 80%; height: 50px; color: white; font-size:24px; border-radius:5px; border:none;}
+table td  {border: 1px solid burlywood; color:green;}
+.big {font-size:46px; color:brown}
