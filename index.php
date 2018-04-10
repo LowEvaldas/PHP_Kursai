@@ -85,23 +85,24 @@
         $sum1 = 0;
         $sum2 = 0;
 
-        for ($i=0; $i<count($a); $i++)
-        {
-            for ($j=0; $j < count($a); $j++)
-            {
-                if ( $i == $j)
-                {
-                    $sum1 += $a[$i][$j];
+        if (sqrt(count($a))) {
+            for ($i = 0; $i < count($a); $i++) {
+                for ($j = 0; $j < count($a); $j++) {
+                    if ($i == $j) {
+                        $sum1 += $a[$i][$j];
+                    }
+                    if (($j == (count($a) - $i - 1))) {
+                        $sum2 += $a[$i][$j];
+                    }
                 }
-               if (  ($j == (count($a)-$i-1))  )
-               {
-                   $sum2 += $a[$i][$j];
-               }
             }
-        }
 
-        echo '1 Įstrižainė: ' . $sum1;
-        echo ' <br> 2 Įstrižainė: ' . $sum2;
+            echo '1 Įstrižainė: ' . $sum1;
+            echo ' <br> 2 Įstrižainė: ' . $sum2;
+        }
+        else {
+            echo 'Masyvas netinkamas';
+        }
 
 
 
