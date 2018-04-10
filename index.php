@@ -72,17 +72,39 @@
             echo $k+1 . ' Didžiausias elementas yra: ' . $max[$k] . "<br>";
         }
 
-        class Printer {
-            function welcome (string $message)
+
+        $b = [[3, 4, 6],
+            [5, 6, 2],
+            [1, 4, 7]];
+
+        $a = [[3, 4, 6, 5],
+              [5, 6, 2, 4],
+              [5, 6, 2, 4],
+              [1, 4, 7, 4]];
+
+        $sum1 = 0;
+        $sum2 = 0;
+
+        for ($i=0; $i<count($a); $i++)
+        {
+            for ($j=0; $j < count($a); $j++)
             {
-                echo "<br>";
-                echo 'Welcome ' . $message;
+                if ( $i == $j)
+                {
+                    $sum1 += $a[$i][$j];
+                }
+               if (  ($j == (count($a)-$i-1))  )
+               {
+                   $sum2 += $a[$i][$j];
+               }
             }
         }
 
-        $world = new Printer();
-        $world->welcome('Evaldas');
-        $world->welcome('Mik');
+        echo '1 Įstrižainė: ' . $sum1;
+        echo ' <br> 2 Įstrižainė: ' . $sum2;
+
+
+
 
 
         // Pagrindinio kodo pabaiga
