@@ -67,12 +67,10 @@ reikšmių arba n stulpelių. Suskaičiuokite visų stulpelių sumas ir atspausd
 $i = 0;
 $suma = [];
 $countas = count($a[$i]);
-    while ($i<$countas)
-    {
 
+    while ($i<$countas) {
         $suma[$i] = 0;
-        for ($j=0; $j<count($a); $j++)
-        {
+        for ($j=0; $j<count($a); $j++) {
             $suma[$i] += $a[$j][$i];
         }
         echo 'Sumos ' . $suma[$i] . '. ';
@@ -98,16 +96,12 @@ $countas = count($a[$i]);
     $sum2 = 0;
 
 
-    for ($i=0; $i<count($a); $i++)
-    {
-        for ($j=0; $j < count($a); $j++)
-        {
-            if ( $i == $j)
-            {
+    for ($i=0; $i<count($a); $i++) {
+        for ($j=0; $j < count($a); $j++) {
+            if ( $i == $j) {
                 $sum1 += $a[$i][$j];
             }
-            if (  ($j == (count($a)-$i-1))  )
-            {
+            if (  ($j == (count($a)-$i-1))  ) {
                 $sum2 += $a[$i][$j];
             }
         }
