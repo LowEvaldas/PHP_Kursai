@@ -66,13 +66,13 @@ array_splice(),
   $array = [-10, 0, 2, 9, -5];
   $countas = count($array); // Prisiskyriau , nes dedant iškart į ciklą jis nesupranta normaliai, ne tokį countą duoda.
   $mazcountas = count($array);
-  $min = PHP_INT_MAX ;
+  $min = PHP_INT_MIN ;
   $mindex = 0;
   $kiek = 0;
 
   while ($kiek < $countas) {
       for ($i=0;$i<$mazcountas; $i++) {
-            if ($array[$i] < $min) {
+            if ($array[$i] > $min) {
                 $min = $array[$i];
                 $mindex = $i;
             }
@@ -82,7 +82,7 @@ array_splice(),
       echo $min . '<br>';
       $kiek++;
       $mazcountas--;
-      $min = PHP_INT_MAX ;
+      $min = PHP_INT_MIN ;
   }
 
 
