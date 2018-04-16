@@ -4,13 +4,7 @@
     <?php
 
 
-  /*  Duoti trys skaičiai: a, b, c. Nustatykite ar šie skaičiai gali būti
-trikampio kraštinių ilgiai ir jei gali tai kokio trikampio: lygiakraščio,
-lygiašonio ar įvairiakraščio. Atspausdinkite atsakymą. Kaip
-pradinius duomenis panaudokite tokius Turime du masyvus $a = array(5, 6, 10, 15) ir $b =
-array(8,5, 3, 25). Raskite kiekvieno masyvo skaičių vidurkį ir
-atspausdinkite jų skirtumą. Masyvo vidurkio suradimui
-parašykite funkciją. Rezultatas turi gautis: -1.25Turime du masyvus $a = array(5, 6, 10, 15) ir $b =
+  /* Turime du masyvus $a = array(5, 6, 10, 15) ir $b =
 array(8,5, 3, 25). Raskite kiekvieno masyvo skaičių vidurkį ir
 atspausdinkite jų skirtumą. Masyvo vidurkio suradimui
 parašykite funkciją. Rezultatas turi gautis: -1.25*/
