@@ -10,10 +10,10 @@ atspausdinkite jų skirtumą. Masyvo vidurkio suradimui
 parašykite funkciją. Rezultatas turi gautis: -1.25*/
 
 
-  echo 'Turime du masyvus $a = array(5, 6, 10, 15) ir $b =
+  echo '<b>Turime du masyvus $a = array(5, 6, 10, 15) ir $b =
 array(8,5, 3, 25). Raskite kiekvieno masyvo skaičių vidurkį ir
 atspausdinkite jų skirtumą. Masyvo vidurkio suradimui
-parašykite funkciją. Rezultatas turi gautis: -1.25 <br>';
+parašykite funkciją. Rezultatas turi gautis: -1.25 </b> <br>';
 
   $a = [5,6,10,15];
   $b = [8,5,3,25];
@@ -39,11 +39,11 @@ parašykite funkciją. Rezultatas turi gautis: -1.25 <br>';
     //1...1000. Skaičiaus daliklių radimui ir tikrinimui ar skaičius
     //tobulas pasirašykite atskiras funkcijas.
 
-    echo 'Tobuluoju skaičiumi vadinamas natūralusis skaičius, lygus
+    echo '<b>Tobuluoju skaičiumi vadinamas natūralusis skaičius, lygus
     //visų savo daliklių, mažesnių už save patį, sumai. pvz 28 = 1
     //+ 2 + 4 + 7 + 14 Suraskite visus tokius skaičius iš intervalo
     //1...1000. Skaičiaus daliklių radimui ir tikrinimui ar skaičius
-    //tobulas pasirašykite atskiras funkcijas.<br><br>';
+    //tobulas pasirašykite atskiras funkcijas.</b><br><br>';
 
     // 28, 1, 2, ,
     function tobulieji()
