@@ -19,7 +19,8 @@ pradinius duomenis panaudokite tokius skaičius. Apskaičiuokite ir atspausdinki
       [3, 4, 5],
       [2, 10, 8],
       [5, 6, 5],
-      [5, 5, 5]];
+      [5, 5, 5]
+  ];
 
 
   for ($i=0;$i<count($trik); $i++){
@@ -84,9 +85,6 @@ array_splice(),
       $mazcountas--;
       $min = PHP_INT_MIN ;
   }
-
-
-
     ?>
 </center>
 </body>
