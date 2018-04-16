@@ -36,7 +36,7 @@ parašykite funkciją. Rezultatas turi gautis: -1.25 <br>';
   }
 
   echo '<br>Vidurkių skirtumas: ' . (vidurkis($a)-vidurkis($b));
-  echo '<br> <br>';
+  echo '<br>  <br>';
 
 
   //Tobuluoju skaičiumi vadinamas natūralusis skaičius, lygus
