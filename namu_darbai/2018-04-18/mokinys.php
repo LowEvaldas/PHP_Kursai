@@ -27,9 +27,10 @@ class Mokinys extends Trimestras
         for ($i=0; $i<count($this->dalykai); $i++)
         {
             foreach ($this->dalykai as $key=>$dalykas){
-              //  var_dump($key);
-                if (!isset($dalykupaz)){
-                    $dalykupaz[$key] += $dalykas;
+
+                if (isset($dalykupaz)){
+                    $dalykupaz[$key] += $dalykas[$i];
+                  //  var_dump($dalykupaz[$key]);
                 }
             }
         }
@@ -52,6 +53,6 @@ class Mokinys extends Trimestras
 
     public function rikiuoti(array $v){
         sort($v);
-        return $v;
+        var_dump ($v);
     }
 }
