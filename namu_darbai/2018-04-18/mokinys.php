@@ -30,7 +30,7 @@ class Mokinys extends Trimestras
 
                 if (isset($dalykupaz)){
                     $dalykupaz[$key] += $dalykas[$i];
-                  //  var_dump($dalykupaz[$key]);
+                    var_dump($dalykupaz[$key]);
                 }
             }
         }
