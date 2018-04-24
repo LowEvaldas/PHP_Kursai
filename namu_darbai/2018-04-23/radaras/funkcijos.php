@@ -19,11 +19,11 @@ function spausdinti(array $ar)
     });
 
     foreach ($ar as $elem) {
-        echo '<b>Data ir laikas: ' . $elem->date->format('Y-m-d H:i:s') . '</b><br>';
+        echo 'Data ir laikas: ' . $elem->date->format('Y-m-d H:i:s') . '<br>';
         echo 'Automobilio numeris: ' . $elem->number . '<br>';
         echo 'Nuvaziuotas atstumas metrais: ' . $elem->distance . '<br>';
         echo 'Sugaistas laikas sekundemis: ' . $elem->time . '<br>';
-        echo 'Greitis: ' . $elem->greitis() . ' km/h  <br>';
+        echo '<b>Greitis: ' . $elem->greitis() . ' km/h  </b><br>';
         echo '<br><br>';
     }
 }
