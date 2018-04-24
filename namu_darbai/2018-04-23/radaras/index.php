@@ -12,7 +12,6 @@ include 'funkcijos.php';
 
 echo '<center>';
 
-
 spausdinti($masinos);
 
 echo '</center>';
