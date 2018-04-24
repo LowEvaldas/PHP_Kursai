@@ -8,51 +8,56 @@
 
 include 'trimestras.php';
 
+/**
+ * Class Mokinys
+ */
 class Mokinys extends Trimestras
 {
+    /**
+     * @var string
+     */
     public $vardas;
+    /**
+     * @var string
+     */
     public $pavarde;
 
-    public function __construct(array $dalykai, string $vardas, string $pavarde )
+    /**
+     * @var
+     */
+    public $data;
+
+    /**
+     * Mokinys constructor.
+     * @param array $dalykai
+     * @param string $vardas
+     * @param string $pavarde
+     */
+    public function __construct(array $dalykai, string $vardas, string $pavarde, DateTime $data )
     {
         parent::__construct($dalykai);
         $this->vardas = $vardas;
         $this->pavarde = $pavarde;
+        $this->data = $data;
     }
 
-    // Sudedam atskirų dalykų pažymius į masyvus su raktu-dalyko pavadinimu
-    public function sudeti()
-    {
-        $dalykupaz = [];
-        for ($i=0; $i<count($this->dalykai); $i++)
-        {
-            foreach ($this->dalykai as $key=>$dalykas){
-
-                if (isset($dalykupaz)){
-                    $dalykupaz[$key] += $dalykas[$i];
-                    var_dump($dalykupaz[$key]);
-                }
-            }
-        }
-
-
-        $this->vidurkis($dalykupaz);
-    }
-
-    /*
-     * Vieno dalyko vidurkio skaičiavimas
+    /**
+     * Skaičiuoja pažymių vidurkį
+     * @return float|int
      */
-    public function vidurkis(array $pazymiai)
+    public function vidurkis()
     {
-        $vidurkiai = [];
-        foreach ($pazymiai as $key => $pazsum){
-                $vidurkiai[] = $pazsum / count($this->dalykai[$key]);
-        }
-        $this->rikiuoti($vidurkiai);
+        return array_sum($this->dalykai) / count($this->dalykai);
     }
 
-    public function rikiuoti(array $v){
-        sort($v);
-        var_dump ($v);
+    /**
+     * Skaičiuoja kiek mokiniui metų
+     * @return int
+     */
+    public function metai()
+    {
+        return date_diff(new DateTime('now'),$this->data)->y;
     }
+
+
 }
