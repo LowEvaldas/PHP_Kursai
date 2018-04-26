@@ -32,9 +32,9 @@ class Radar
      * @param int $distance
      * @param int $time
      */
-    public function __construct(DateTime $date, string $number, int $distance, int $time)
+    public function __construct(string $date, string $number, float $distance, float $time)
     {
-        $this->date = $date;
+        $this->date = new DateTime($date);
         $this->distance = $distance;
         $this->number = $number;
         $this->time = $time;
