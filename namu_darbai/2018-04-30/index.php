@@ -34,7 +34,7 @@
     $modelis = $_POST['modelis'];
     $data = $_POST['data'];
     $id = $_POST['id'];
-    $offsetas = $_GET['offset'];
+    $offsetas = $_GET['offset'] ?? 0;
     $kryptis = $_GET['kryptis'];
     $howmuch = 8;
 
@@ -52,10 +52,6 @@
     }
 
 
-    if (!$offsetas){
-        $offsetas=0;
-    }
-
     if ($kryptis){
         if ($kryptis == 'next'  ){
             $offsetas += $howmuch;
@@ -64,7 +60,6 @@
             $offsetas -= $howmuch;
         }
     }
-
 
     $sql = "SELECT * FROM automobilis LIMIT $howmuch OFFSET $offsetas";
     $sql2 = "SELECT * FROM automobilis";
