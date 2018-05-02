@@ -49,6 +49,7 @@ if ($filter){
 
 if (isset($_COOKIE['filteredmasinos'])){
     setcookie('filtered', '');
+
 }
 
 
