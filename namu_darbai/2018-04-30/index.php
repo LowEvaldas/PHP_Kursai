@@ -1,11 +1,25 @@
-
-
 <style>
-    .mark, .mode, .date {font-size: 24px; font-family: Bahnschrift}
-    .mark {color: cornflowerblue;}
-    .mode {color: cornflowerblue;}
-    .date {font-size: 20px; color: lightslategray}
-    tr, td {border-color: darkblue}
+    .mark, .mode, .date {
+        font-size: 24px;
+        font-family: Bahnschrift
+    }
+
+    .mark {
+        color: cornflowerblue;
+    }
+
+    .mode {
+        color: cornflowerblue;
+    }
+
+    .date {
+        font-size: 20px;
+        color: lightslategray
+    }
+
+    tr, td {
+        border-color: darkblue
+    }
 </style>
 
 <center>
@@ -38,25 +52,22 @@
     $kryptis = $_GET['kryptis'];
     $howmuch = 8;
 
-    if ($marke && $modelis && $data){
+    if ($marke && $modelis && $data) {
         $qur = $connection->prepare('INSERT INTO automobilis(marke,modelis,data) VALUES(?,?,?)');
-        $qur->bind_param("sss", $marke, $modelis,$data);
+        $qur->bind_param("sss", $marke, $modelis, $data);
         $qur->execute();
     }
 
-
-    if ($marke && $modelis && $id){
+    if ($marke && $modelis && $id) {
         $qur = $connection->prepare('UPDATE automobilis SET marke=?, modelis=? WHERE id=?');
         $qur->bind_param("ssi", $marke, $modelis, $id);
         $qur->execute();
     }
 
-
-    if ($kryptis){
-        if ($kryptis == 'next'  ){
+    if ($kryptis) {
+        if ($kryptis == 'next') {
             $offsetas += $howmuch;
-        }
-        else if ($kryptis == 'prev'){
+        } else if ($kryptis == 'prev') {
             $offsetas -= $howmuch;
         }
     }
@@ -64,29 +75,29 @@
     $sql = "SELECT * FROM automobilis LIMIT $howmuch OFFSET $offsetas";
     $sql2 = "SELECT * FROM automobilis";
 
-    if (!($result = $connection->query($sql))){
+    if (!($result = $connection->query($sql))) {
         die ('Error :' . $connection->error);
     }
 
-    if (!($result2 = $connection->query($sql2))){
+    if (!($result2 = $connection->query($sql2))) {
         die ('Error :' . $connection->error);
     }
 
-    if ($result->num_rows > 0){
+    if ($result->num_rows > 0) {
 
-        while($row = $result->fetch_assoc()){
+        while ($row = $result->fetch_assoc()) {
             $date = new DateTime($row['data']);
             echo '<form action="index.php" method="POST">';
 
-            echo '<input name="marke" value='. $row['marke'].'>' .
-                ' <input name="modelis" value= '. $row['modelis'].'>' .
-                '<input type="hidden" name="id" value= '. $row['id'].'>' .
-            ' <input type="submit" value="Keisti">' . '<br>';
+            echo '<input name="marke" value=' . $row['marke'] . '>' .
+                ' <input name="modelis" value= ' . $row['modelis'] . '>' .
+                '<input type="hidden" name="id" value= ' . $row['id'] . '>' .
+                ' <input type="submit" value="Keisti">' . '<br>';
 
             echo '</form>';
         }
 
-        if ($offsetas < $result2->num_rows-$howmuch) {
+        if ($offsetas < $result2->num_rows - $howmuch) {
             echo '<a href="index.php?kryptis=next&offset=' . $offsetas . '">Pirmyn</a><br>';
         }
 
