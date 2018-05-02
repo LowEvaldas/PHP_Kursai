@@ -69,7 +69,7 @@
     }
 
 
-    $sql = "SELECT * FROM automobilis LIMIT 5 OFFSET $offsetas";
+    $sql = "SELECT * FROM automobilis LIMIT $howmuch OFFSET $offsetas";
     $sql2 = "SELECT * FROM automobilis";
 
     if (!($result = $connection->query($sql))){
