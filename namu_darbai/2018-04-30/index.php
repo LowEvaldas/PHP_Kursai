@@ -36,6 +36,7 @@
     $id = $_POST['id'];
     $offsetas = $_GET['offset'];
     $kryptis = $_GET['kryptis'];
+    $howmuch = 5;
 
     if ($marke && $modelis && $data){
         $qur = $connection->prepare('INSERT INTO automobilis(marke,modelis,data) VALUES(?,?,?)');
@@ -60,10 +61,10 @@
 
     if ($kryptis){
         if ($kryptis == 'next'  ){
-            $offsetas += 5;
+            $offsetas += $howmuch;
         }
         else if ($kryptis == 'prev'){
-            $offsetas -= 5;
+            $offsetas -= $howmuch;
         }
     }
 
@@ -93,7 +94,7 @@
             echo '</form>';
         }
 
-        if ($offsetas < $result2->num_rows-5) {
+        if ($offsetas < $result2->num_rows-$howmuch) {
             echo '<a href="index.php?kryptis=next&offset=' . $offsetas . '">Pirmyn</a><br>';
         }
 
