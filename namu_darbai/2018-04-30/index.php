@@ -36,7 +36,7 @@
     $id = $_POST['id'];
     $offsetas = $_GET['offset'];
     $kryptis = $_GET['kryptis'];
-    $howmuch = 5;
+    $howmuch = 8;
 
     if ($marke && $modelis && $data){
         $qur = $connection->prepare('INSERT INTO automobilis(marke,modelis,data) VALUES(?,?,?)');
@@ -46,8 +46,8 @@
 
 
     if ($marke && $modelis && $id){
-        $qur = $connection->prepare('UPDATE automobilis SET marke=?, modelis=? WHERE id=' . $id . '');
-        $qur->bind_param("ss", $marke, $modelis);
+        $qur = $connection->prepare('UPDATE automobilis SET marke=?, modelis=? WHERE id=?');
+        $qur->bind_param("ssi", $marke, $modelis, $id);
         $qur->execute();
     }
 
