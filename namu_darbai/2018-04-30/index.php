@@ -52,10 +52,7 @@
     }
 
 
-    if ($offsetas){
-
-    }
-    else{
+    if (!$offsetas){
         $offsetas=0;
     }
 
